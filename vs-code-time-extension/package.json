@@ -12,10 +12,17 @@
   "activationEvents": ["onStartupFinished"],
   "main": "./extension.js",
   "contributes": {
-    "commands": [{
-      "command": "vs-code-time-extension.helloWorld",
-      "title": "Hello World"
-    }]
+    "configuration": {
+      "type": "object",
+      "title": "VS Code Time Extension Configuration",
+      "properties": {
+        "vs-code-time-extension.notificationInterval": {
+          "type": "number",
+          "default": 60,
+          "description": "Interval in minutes for stretch break reminders."
+        }
+      }
+    }
   },
   "scripts": {
     "lint": "eslint .",
